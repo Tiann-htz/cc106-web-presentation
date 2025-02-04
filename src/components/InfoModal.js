@@ -55,8 +55,8 @@ const InfoModal = () => {
                   <span className="text-4xl mr-4">{modalContent.icon}</span>
                   <h2 className="text-2xl font-bold text-green-800">{modalContent.title}</h2>
                 </div>
-                <p className="text-green-700 leading-relaxed mb-4">{modalContent.subtitle}</p>
-                <div className="prose prose-green max-w-none">
+                <p className="text-green-800 leading-relaxed mb-4">{modalContent.subtitle}</p>
+                <div className="text-gray-700 prose prose-green max-w-none">
                   {modalContent.description}
                 </div>
               </motion.div>

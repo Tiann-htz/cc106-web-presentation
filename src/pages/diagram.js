@@ -24,8 +24,8 @@ const Card = ({ icon, title, subtitle, description }) => {
 
   return (
     <div 
-      className="bg-white/80 backdrop-blur-lg p-6 md:p-8 rounded-2xl shadow-lg border-2 border-green-200 
-                  hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 
+      className="bg-white/90 backdrop-blur-lg p-6 md:p-8 rounded-2xl shadow-lg border-2 border-green-200 
+                  hover:bg-gradient-to-br hover:from-green-200 hover:to-green-100 
                   hover:border-green-400 hover:shadow-xl
                   transition-all duration-300 transform hover:-translate-y-2 group w-full max-w-xs
                   cursor-pointer"
@@ -34,10 +34,10 @@ const Card = ({ icon, title, subtitle, description }) => {
       <div className="flex justify-center mb-4 text-4xl transform group-hover:scale-110 transition-transform">
         {icon}
       </div>
-      <h3 className="text-green-800 font-bold text-lg md:text-xl text-center mb-2 group-hover:text-emerald-700">
+      <h3 className="text-green-700 font-bold text-lg md:text-xl text-center mb-2 group-hover:text-green-600">
         {title}
       </h3>
-      <p className="text-green-600 text-center text-sm md:text-base group-hover:text-emerald-600">
+      <p className="text-green-600 text-center text-sm md:text-base group-hover:text-green-500">
         {subtitle}
       </p>
     </div>
@@ -100,9 +100,9 @@ const DiagramPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-200">
+    <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-700 to-green-900 text-white">
       {/* Header with Dropdown Explanation */}
-      <div className="bg-gradient-to-r from-green-600 to-emerald-600 px-5 py-8 md:py-12 text-center rounded-b-[30px] shadow-lg shadow-green-200 relative overflow-hidden mb-8 md:mb-16">
+      <div className="bg-gradient-to-r from-green-700/70 to-green-900/70 backdrop-blur-md px-5 py-8 md:py-12 text-center rounded-b-[30px] shadow-lg shadow-green-800 relative overflow-hidden mb-8 md:mb-16">
         <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold animate-fadeIn relative z-10">
           Smart Agriculture System
         </h1>
@@ -110,11 +110,11 @@ const DiagramPage = () => {
           Complete Monitoring and Mobile Alerts
         </div>
         
-        {/* Dropdown */}
+        {/* Dropdown Explanation */}
         <div className="max-w-2xl mx-auto mt-6">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="explanation">
-              <AccordionTrigger className="text-white hover:text-green-100 justify-center">
+              <AccordionTrigger className="text-white hover:text-green-300 justify-center">
                 Learn More About the System
               </AccordionTrigger>
               <AccordionContent className="bg-white/10 text-white p-6 rounded-b-xl text-left">
@@ -154,6 +154,7 @@ const DiagramPage = () => {
         </div>
       </div>
 
+      {/* Rest of the existing code remains the same */}
       <div className="max-w-7xl mx-auto px-4 relative">
         {/* Field Level */}
         <div className="flex justify-center gap-6 md:gap-10 my-8 animate-fadeIn">
@@ -217,6 +218,13 @@ const DiagramPage = () => {
         </div>
       </div>
       <InfoModal />
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-6">
+        <div className="flex justify-center">
+          <p>&copy; 2025 Smart Agriculture System. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };
@@ -229,11 +237,12 @@ const DiagramPageWithProvider = () => (
 
 export default DiagramPageWithProvider;
 
+// Arrow component with updated colors for lighter green theme
 const Arrow = ({ label }) => (
   <div className="flex flex-col items-center my-6 animate-fadeIn">
-    <div className="w-0.5 h-10 bg-green-400 relative">
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-green-400"></div>
+    <div className="w-0.5 h-10 bg-green-500 relative">
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-green-500"></div>
     </div>
-    <span className="text-green-700 text-xs font-semibold uppercase tracking-wider mt-2">{label}</span>
+    <span className="text-green-300 text-xs font-semibold uppercase tracking-wider mt-2">{label}</span>
   </div>
 );
