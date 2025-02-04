@@ -16,3 +16,9 @@
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
