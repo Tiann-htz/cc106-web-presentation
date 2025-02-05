@@ -43,7 +43,7 @@ const TeamMembers = () => {
           <AccordionTrigger className="bg-gradient-to-r from-green-700/70 to-green-900/70 backdrop-blur-md px-5 py-6 rounded-t-[30px] shadow-lg shadow-green-800">
             <div className="flex items-center justify-center gap-3">
               <Users2 className="w-8 h-8 text-green-300" />
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Contributors</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white"> AgriTech Contributors</h2>
             </div>
           </AccordionTrigger>
           <AccordionContent className="bg-gradient-to-r from-green-700/70 to-green-900/70 backdrop-blur-md px-5 py-8 rounded-b-[30px] shadow-lg shadow-green-800 border-t border-green-400/30">

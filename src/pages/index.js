@@ -13,11 +13,16 @@ const LandingPage = () => {
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto px-4 pt-20 pb-32">
         <div className="text-center space-y-8">
-          <div className="flex justify-center space-x-2 mb-6">
-            <Leaf className="text-green-600 h-8 w-8" />
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-800">
-              Smart Agriculture System
-            </h1>
+          <div className="flex flex-col items-center space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-green-600">
+              AgriTech
+            </h2>
+            <div className="flex justify-center space-x-2">
+              <Leaf className="text-green-600 h-8 w-8" />
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-800">
+                Smart Agriculture System
+              </h1>
+            </div>
           </div>
           
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">

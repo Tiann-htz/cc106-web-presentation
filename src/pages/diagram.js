@@ -104,6 +104,10 @@ const DiagramPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-700 to-green-900 text-white">
       {/* Header with Dropdown Explanation */}
       <div className="bg-gradient-to-r from-green-700/70 to-green-900/70 backdrop-blur-md px-5 py-8 md:py-12 text-center rounded-b-[30px] shadow-lg shadow-green-800 relative overflow-hidden mb-8 md:mb-16">
+        {/* Added AgriTech Title */}
+        <h2 className="text-green-300 text-2xl md:text-3xl font-bold mb-4 animate-fadeIn relative z-10">
+          AgriTech
+        </h2>
         <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold animate-fadeIn relative z-10">
           Smart Agriculture System
         </h1>
