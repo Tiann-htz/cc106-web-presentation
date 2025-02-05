@@ -2,6 +2,7 @@ import React from 'react';
 import { useModal } from '../context/ModalContext';
 import { ModalProvider } from '../context/ModalContext';
 import InfoModal from '../components/InfoModal';
+import TeamMembers from '../components/TeamMembers';
 import { 
   Accordion, 
   AccordionContent, 
@@ -217,7 +218,9 @@ const DiagramPage = () => {
           />
         </div>
       </div>
+      <TeamMembers />
       <InfoModal />
+      
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-6">
