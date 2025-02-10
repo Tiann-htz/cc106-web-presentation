@@ -14,10 +14,11 @@ import {
   LandPlot, 
   Cloud, 
   Cpu, 
-  Leaf 
+  Leaf,
+  ExternalLink 
 } from 'lucide-react';
 
-const Card = ({ icon, title, subtitle, description }) => {
+const Card = ({ icon, title, subtitle, description, figmaLink }) => {
   const { openModal } = useModal();
 
   const handleCardClick = () => {
@@ -30,7 +31,7 @@ const Card = ({ icon, title, subtitle, description }) => {
                   hover:bg-gradient-to-br hover:from-green-200 hover:to-green-100 
                   hover:border-green-400 hover:shadow-xl
                   transition-all duration-300 transform hover:-translate-y-2 group w-full max-w-xs
-                  cursor-pointer"
+                  cursor-pointer relative"
       onClick={handleCardClick}
     >
       <div className="flex justify-center mb-4 text-4xl transform group-hover:scale-110 transition-transform">
@@ -42,6 +43,17 @@ const Card = ({ icon, title, subtitle, description }) => {
       <p className="text-green-600 text-center text-sm md:text-base group-hover:text-green-500">
         {subtitle}
       </p>
+      {figmaLink && (
+        <a 
+          href={figmaLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-2 right-2 text-green-600 hover:text-green-800 transition-colors"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ExternalLink className="w-5 h-5" />
+        </a>
+      )}
     </div>
   );
 };
@@ -91,7 +103,8 @@ const DiagramPage = () => {
       icon: '📱',
       title: 'Mobile Application',
       subtitle: 'Dashboard • Alerts • Control • Insights',
-      description: 'The Mobile Application serves as a farmer\'s digital assistant, providing a user-friendly interface to monitor and control the Smart Agriculture System. It offers real-time dashboards, instant alerts about field conditions, remote control of irrigation systems, and AI-powered insights for optimal farming decisions.'
+      description: 'The Mobile Application serves as a farmer\'s digital assistant, providing a user-friendly interface to monitor and control the Smart Agriculture System. It offers real-time dashboards, instant alerts about field conditions, remote control of irrigation systems, and AI-powered insights for optimal farming decisions.',
+      figmaLink: 'https://www.figma.com/file/example-mobile-app-design'
     },
     {
       icon: '👨‍🌾',

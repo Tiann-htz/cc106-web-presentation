@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useModal } from '../context/ModalContext';
+import { ExternalLink } from 'lucide-react';
 
 const InfoModal = () => {
   const { modalContent, closeModal } = useModal();
@@ -8,10 +9,14 @@ const InfoModal = () => {
   if (!modalContent) return null;
 
   const getImagePath = (title) => {
-   
     const filename = title.toLowerCase().replace(/\s+/g, '-') + '.png';
     return `/Images/${filename}`;
   };
+
+  // Figma link will only show for Mobile Application
+  const figmaLink = modalContent.title === "Mobile Application" 
+    ? "https://www.figma.com/proto/MNYqfrEDVdpzfW4TFXVi6v/Smart-Agriculture-System-Prototype?node-id=5-54&t=RcE0p5twulAK2z06-1&starting-point-node-id=5%3A54" 
+    : null;
 
   return (
     <AnimatePresence>
@@ -29,16 +34,13 @@ const InfoModal = () => {
             flex flex-col md:flex-row relative"
             onClick={(e) => e.stopPropagation()}
           >
-            
-
-            {/* Image section - now visible on mobile and larger on all screens */}
+            {/* Image section */}
             <div className="w-full md:w-1/2 lg:w-2/5 mb-6 md:mb-0 md:mr-8 flex items-center justify-center">
               <img 
                 src={getImagePath(modalContent.title)} 
                 alt={modalContent.title}
                 className="w-full max-w-md h-auto object-cover rounded-xl shadow-lg"
                 onError={(e) => {
-
                   e.target.src = '/Images/placeholder.jpg'; 
                 }}
               />
@@ -59,6 +61,21 @@ const InfoModal = () => {
                 <div className="text-gray-700 prose prose-green max-w-none">
                   {modalContent.description}
                 </div>
+                
+                {/* Figma link - only shows for Mobile Application */}
+                {figmaLink && (
+                  <div className="mt-6 flex items-center">
+                    <a 
+                      href={figmaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-600 hover:text-green-800 transition-colors"
+                    >
+                      <ExternalLink className="w-5 h-5 mr-2" />
+                      <span>View Design in Figma</span>
+                    </a>
+                  </div>
+                )}
               </motion.div>
             </div>
           </motion.div>
